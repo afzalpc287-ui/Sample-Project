@@ -2,8 +2,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as mlt
 import seaborn as sns
+valid_class=[9,10,11,12]
 print('Hello Students...Please Enter Your Class')
 classes=int(input("class:"))
+while classes not in valid_class:
+     print('Enter Only 9 to 12') 
+     classes=int(input("class:"))
 print('Your Class is :',classes)
 if classes == 9 or classes== 10:
     print('Now Please Enter Your Details')
@@ -22,7 +26,7 @@ if classes == 9 or classes== 10:
     df=pd.DataFrame(subjects)
     print(df)
     sns.catplot(df,kind='bar')
-    mlt.title(Name,'Subjects Progress Comparison')
+    mlt.title(f'{Name}-Subjects Progress Comparison')
     mlt.show()
     interest=input('Enter Your Interested Subjects:').lower()
     valid_subject=['maths','science','social science','accounts']
@@ -68,7 +72,7 @@ elif classes == 11 or classes== 12:
         df=pd.DataFrame(subjects)
         print(df)
         sns.catplot(df,kind='bar')
-        mlt.title(Name,'Subjects Progress Comparison')
+        mlt.title(f'{Name}-Subjects Progress Comparison')
         mlt.show()
         interest=input('Enter Your Interested Subjects:').lower()
         valid_subject=['maths','physics','chemistry','biology','hindi','english']
@@ -115,7 +119,7 @@ elif classes == 11 or classes== 12:
         df=pd.DataFrame(subjects)
         print(df)
         sns.catplot(df,kind='bar')
-        mlt.title(Name,'Subjects Progress Comparison')
+        mlt.title(f'{Name}-Subjects Progress Comparison')
         mlt.show()
         interest=input('Enter Your Interested Subjects:').lower()
         valid_subject=['geography','history','political science','sociology','economics','hindi','english']
@@ -162,7 +166,7 @@ elif classes == 11 or classes== 12:
         df=pd.DataFrame(subjects)
         print(df) 
         sns.catplot(df,kind='bar')
-        mlt.title(Name,'Subjects Progress Comparison')
+        mlt.title(f'{Name}-Subjects Progress Comparison')
         mlt.show()
         interest=input('Enter Your Interested Subjects:').lower()
         valid_subject=['maths','accounts','business','economics','hindi','english','enterpreneur','legal study']
@@ -190,6 +194,4 @@ elif classes == 11 or classes== 12:
         else:
             print("FAIL")                        
     else:
-        print("Enter Stream only science and arts") 
-else:
-    print('Enter Only 9 to 12')        
+        print("Enter Stream only science and arts")
