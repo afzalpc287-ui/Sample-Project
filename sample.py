@@ -16,18 +16,23 @@ print('Your Class is :',classes)
 if classes == 9 or classes== 10:
     print('Now Please Enter Your Details')
     Name=str(input("Name:"))
-    Maths_Marks=int(input("Maths Marks:"))
-    science=int(input("Science marks:"))
-    social_science=int(input('Social Science marks:'))
-    hindi=int(input('Hindi marks:'))
-    english=int(input('English marks:'))
+    subject_1=str(input('Enter Subject 1:'))
+    subject_2=str(input("Enter Subject 2:"))
+    subject_3=str(input("Enter Subject 3:"))
+    subject_4=str(input("Enter Subject 4:"))
+    subject_5=str(input("Enter Subject 5:"))
+    subject_1_marks=int(input(f'Enter {subject_1} Marks:'))
+    subject_2_marks=int(input(f'Enter {subject_2} Marks:'))
+    subject_3_marks=int(input(f'Enter {subject_3} Marks:'))
+    subject_4_marks=int(input(f'Enter {subject_4} Marks:'))
+    subject_5_marks=int(input(f'Enter {subject_5} Marks:'))
     # Convert input to Dataframe
     subjects={'Name':[Name],
-              'Maths':[Maths_Marks],
-              'Science':[science],
-              'Social Science':[ social_science],
-              'Hindi':[hindi],
-              'English':[english]}
+              subject_1:[subject_1_marks],
+              subject_2:[subject_2_marks],
+              subject_3:[subject_3_marks],
+              subject_4:[subject_4_marks],      
+              subject_5:[subject_5_marks]}
     df=pd.DataFrame(subjects)
     print(df)
     # Create a Plot by Using SeaBorn or Matplotlib
@@ -48,7 +53,7 @@ if classes == 9 or classes== 10:
     elif interest == 'maths' or interest == 'accounts' :
         print('Commerce Stream is Best For You in 12th Class')
     # Adding Grade of Student Marks                 
-    grade=(Maths_Marks+science+social_science+hindi+english)/5    
+    grade=(subject_1_marks+subject_2_marks+subject_3_marks+subject_4_marks+subject_5_marks)/5    
     if grade>=90:
         print("A Grade:",grade,'%')
     elif grade>=70 and grade<90:
@@ -61,28 +66,39 @@ if classes == 9 or classes== 10:
         print("FAIL")            
 #  11 or 12 class Start         
 elif classes == 11 or classes== 12:
-    print('Now PLease Enter your Stream')
+    print('Enter Valid Stream')
     # Taking input sream for better Analyse
-    stream=str(input('stream:'))
+    stream=str(input('stream:')).lower()
+    # Adding Loop for Stream
+    valid_stream=['science','arts','commerce']
+    while stream not in valid_stream:
+        print('Enter Valid Stream')
+        stream=str(input('stream:'))
     # Science Stream Start
-    if stream =="Science" or stream== 'science':
+    if stream== 'science'.lower():
         #  11 or 12 class Science Stream Students enter Name and Subject
         print('Now Please Enter Your Details')
         Name=str(input("Name:"))
-        Maths_Marks=int(input("Maths Marks:"))
-        physics=int(input("Physics Marks:"))
-        chemistry=int(input('Chemistry Marks:'))
-        biology=int(input('Biology Mraks:'))
-        hindi=int(input('Hindi Marks:'))
-        english=int(input('English Marks:'))
-         # Convert input to Dataframe
+        subject_1=str(input('Enter Subject 1:'))
+        subject_2=str(input("Enter Subject 2:"))
+        subject_3=str(input("Enter Subject 3:"))
+        subject_4=str(input("Enter Subject 4:"))
+        subject_5=str(input("Enter Subject 5:"))
+        subject_6=str(input("Enter Subject 6:"))
+        subject_1_marks=int(input(f'Enter {subject_1} Marks:'))
+        subject_2_marks=int(input(f'Enter {subject_2} Marks:'))
+        subject_3_marks=int(input(f'Enter {subject_3} Marks:'))
+        subject_4_marks=int(input(f'Enter {subject_4} Marks:'))
+        subject_5_marks=int(input(f'Enter {subject_5} Marks:'))
+        subject_6_marks=int(input(f'Enter {subject_5} Marks:'))
+        # Convert input to Dataframe
         subjects={'Name':[Name],
-              'Maths':[Maths_Marks],
-              'Physics':[physics],
-              'Chemistry':[chemistry],
-              'Biology':[biology],
-              'Hindi':[hindi],
-              'English':[english]}
+                  subject_1:[subject_1_marks],
+                  subject_2:[subject_2_marks],
+                  subject_3:[subject_3_marks],
+                  subject_4:[subject_4_marks],      
+                  subject_5:[subject_5_marks],
+                  subject_6:[subject_6_marks]}
         df=pd.DataFrame(subjects)
         print(df)
         # Create a Plot by Using SeaBorn or Matplotlib
@@ -105,7 +121,7 @@ elif classes == 11 or classes== 12:
             print('Just Do CUET and Get Addmission in', interest,'hounors and Become Lecturare',
                   '\n','You Also Have More Options like:D.Pharma,B.Phharma, and for more info search on internet' )
         # Adding Grade of Student Marks                  
-        grade=(Maths_Marks+physics+chemistry+biology+hindi+english)/6    
+        grade=(subject_1_marks+subject_2_marks+subject_3_marks+subject_4_marks+subject_5_marks+subject_6_marks)/6    
         if grade>=90:
             print("A Grade:",grade,'%')
         elif grade>=70 and grade<90:
@@ -117,26 +133,33 @@ elif classes == 11 or classes== 12:
         else:
             print("FAIL") 
     # Arts Stream Start                     
-    elif stream == "Arts" or stream== 'arts':     
+    elif stream== 'arts'.lower():     
         print('Now Please Enter Your Details')
         # 11 or 12 class Arts Stream Students enter Name and Subject
         Name=str(input("Name:"))
-        Geography=int(input("Geography Marks:"))
-        history=int(input("History Marks:"))
-        political_science=int(input('Political Science Marks:'))
-        sociology=int(input('Sociology Marks:'))
-        economics=int(input('Economics Marks:'))
-        hindi=int(input('Hindi Marks:'))
-        english=int(input('English Marks:'))
+        subject_1=str(input('Enter Subject 1:'))
+        subject_2=str(input("Enter Subject 2:"))
+        subject_3=str(input("Enter Subject 3:"))
+        subject_4=str(input("Enter Subject 4:"))
+        subject_5=str(input("Enter Subject 5:"))
+        subject_6=str(input("Enter Subject 6:"))
+        subject_7=str(input("Enter Subject 7:"))
+        subject_1_marks=int(input(f'Enter {subject_1} Marks:'))
+        subject_2_marks=int(input(f'Enter {subject_2} Marks:'))
+        subject_3_marks=int(input(f'Enter {subject_3} Marks:'))
+        subject_4_marks=int(input(f'Enter {subject_4} Marks:'))
+        subject_5_marks=int(input(f'Enter {subject_5} Marks:'))
+        subject_6_marks=int(input(f'Enter {subject_5} Marks:'))
+        subject_7_marks=int(input(f'Enter {subject_7} Marks:'))
         # Convert input to Dataframe
         subjects={'Name':[Name],
-              'Geography':[Geography],
-              'History':[history],
-              'Political Science':[political_science],
-              'Sociology':[sociology],
-              'Economics':[economics],
-              'Hindi':[hindi],
-              'English':[english]}
+                  subject_1:[subject_1_marks],
+                  subject_2:[subject_2_marks],
+                  subject_3:[subject_3_marks],
+                  subject_4:[subject_4_marks],      
+                  subject_5:[subject_5_marks],
+                  subject_6:[subject_6_marks],
+                  subject_7:[subject_7_marks]}
         df=pd.DataFrame(subjects)
         print(df)
         # Create a Plot by Using SeaBorn or Matplotlib
@@ -157,7 +180,7 @@ elif classes == 11 or classes== 12:
             print('Just Do CUET and Get Addmission in', interest,'hounors and Become Lecturare'
                    '\n','You Also Have More Options like:BCA,BBA,IT Feild and for more info search on internet')
         # Adding Grade of Student Marks   
-        grade=(Geography+history+political_science+sociology+economics+hindi+english)/7   
+        grade=(subject_1_marks+subject_2_marks+subject_3_marks+subject_4_marks+subject_5_marks+subject_6_marks+subject_7_marks)/7   
         if grade>=90:
             print("A Grade:",grade,'%')
         elif grade>=70 and grade<90:
@@ -173,24 +196,32 @@ elif classes == 11 or classes== 12:
         print('Now Please Enter Your Details')
         # 11 or 12 class Commerce Stream Students enter Name and Subject
         Name=str(input("Name:"))
-        Accounts=int(input("Accounts Marks:"))
-        Maths_Marks=int(input("Maths Marks:"))
-        business=int(input('Business Marks:'))
-        economics=int(input('Economics Marks:'))
-        enterpre=int(input('Enterprenuership Marks:'))
-        legal_study=int(input('Legal Studies Marks:'))
-        hindi=int(input('Hindi Marks:'))
-        english=int(input('English Marks:')) 
+        subject_1=str(input('Enter Subject 1:'))
+        subject_2=str(input("Enter Subject 2:"))
+        subject_3=str(input("Enter Subject 3:"))
+        subject_4=str(input("Enter Subject 4:"))
+        subject_5=str(input("Enter Subject 5:"))
+        subject_6=str(input("Enter Subject 6:"))
+        subject_7=str(input("Enter Subject 7:"))
+        subject_8=str(input("Enter Subject 8:"))
+        subject_1_marks=int(input(f'Enter {subject_1} Marks:'))
+        subject_2_marks=int(input(f'Enter {subject_2} Marks:'))
+        subject_3_marks=int(input(f'Enter {subject_3} Marks:'))
+        subject_4_marks=int(input(f'Enter {subject_4} Marks:'))
+        subject_5_marks=int(input(f'Enter {subject_5} Marks:'))
+        subject_6_marks=int(input(f'Enter {subject_5} Marks:'))
+        subject_7_marks=int(input(f'Enter {subject_7} Marks:'))
+        subject_8_marks=int(input(f'Enter {subject_8} Marks:'))
         # Convert input to Dataframe
         subjects={'Name':[Name],
-              'Maths':[Maths_Marks],
-              'Accounts':[Accounts],
-              'Business':[business],
-              'Economics':[economics],
-              'Enterpreneur':[enterpre],
-              'Legal Study':[legal_study],
-              'Hindi':[hindi],
-              'English':[english]}
+                  subject_1:[subject_1_marks],
+                  subject_2:[subject_2_marks],
+                  subject_3:[subject_3_marks],
+                  subject_4:[subject_4_marks],      
+                  subject_5:[subject_5_marks],
+                  subject_6:[subject_6_marks],
+                  subject_7:[subject_7_marks],
+                  subject_8:[subject_8_marks]}
         df=pd.DataFrame(subjects)
         print(df)
         # Create a Plot by Using SeaBorn or Matplotlib 
@@ -214,7 +245,7 @@ elif classes == 11 or classes== 12:
             print('Just Do CUET and Get Addmission in', interest,'hounors and Become Lecturare'
                   '\n','You Also Have More Options like:B.Com,BBA, and for more info search on internet') 
         # Adding Grade of Student Marks                 
-        grade=(Accounts+Maths_Marks+business+economics+enterpre+legal_study+hindi+english)/8   
+        grade=(subject_1_marks+subject_2_marks+subject_3_marks+subject_4_marks+subject_5_marks+subject_6_marks+subject_7_marks+subject_8_marks)/8   
         if grade>=90:
             print("A Grade:",grade,'%')
         elif grade>=70 and grade<90:
@@ -226,4 +257,4 @@ elif classes == 11 or classes== 12:
         else:
             print("FAIL")                        
     else:
-        print("Enter Stream only science and arts")
+        print("Enter Stream only science and arts and commerce ")
