@@ -55,7 +55,16 @@ def collect_and_analyze(name, total_subjects):
     plot_marks(df, name)
     grade, avg = grade_calculate(marks)
     print(f"{grade} Grade: {avg:.2f}%")
-    return marks                        
+    return marks
+#Name is string
+def name_input():
+    while True:
+            Name=str(input('Enter your Name:')).strip()
+            if Name.isalpha():
+                print(f'Hello {Name}!!')
+                return Name
+            else:
+                print('❌Enter Only in English Alphabets...')                                        
 # Using While Loop for Enter Class
 print('Hello Students...Please Enter Your Class')
 valid_class = [9, 10, 11, 12]
@@ -72,7 +81,7 @@ while True:
 print('Your Class is :',classes)
 if classes in (9,10):
     print('Now Please Enter Your Details')
-    Name=str(input("Name:"))
+    Name=name_input()    
     marks = collect_and_analyze(Name, 5)
     # Taking Input from Student of Interesting Subject
     interest=input('Enter Your Interested Subjects:').lower()
@@ -90,26 +99,12 @@ if classes in (9,10):
 #  11 or 12 class Start
 elif classes in (11 , 12):
     # Input stream 
-    stream=get_stream()
-    if stream == 'science':
-         print('Now Please Enter Your Details')
-         Name=str(input("Name:"))
-         marks = collect_and_analyze(Name, 5)
-    elif stream == 'arts':
-         print('Now Please Enter Your Details')
-         Name=str(input("Name:"))
-         marks = collect_and_analyze(Name, 7)
-    elif stream == 'commerce':
-         print('Now Please Enter Your Details')
-         Name=str(input("Name:"))
-         marks = collect_and_analyze(Name, 8)     
+    stream=get_stream()    
     # Science Stream
     if stream== 'science':
-        stream_subject=str(input('Enter Your Subject is PCB or PCM:')).lower()
-        valid_streamsubject=['pcb','pcm']
-        while stream_subject not in valid_streamsubject:
-            print('Enter Valid Subject:')
-            stream_subject=str(input('Enter Your Subject is PCB or PCM:')).lower()
+        print('Now Please Enter Your Details')
+        Name=name_input()
+        marks = collect_and_analyze(Name, 5)    
         # Taking Input from Student of Interesting Subject
         interest=input('Enter Your Interested Subjects:').lower()
         valid_subject=['maths','physics','chemistry','biology','hindi','english']
@@ -127,6 +122,9 @@ elif classes in (11 , 12):
                   '\n','You Also Have More Options like:D.Pharma,B.Phharma, and for more info search on internet' )            
     # Arts Stream Start                     
     elif stream== 'arts':
+        print('Now Please Enter Your Details')
+        Name=name_input()
+        marks = collect_and_analyze(Name, 7)
         # Taking Input from Student of Interesting Subject
         interest=input('Enter Your Interested Subjects:').lower()
         valid_subject=['geography','history','political science','sociology','economics','hindi','english']
@@ -142,6 +140,9 @@ elif classes in (11 , 12):
                    '\n','You Also Have More Options like:BCA,BBA,IT Feild and for more info search on internet')
     # Commerce Stream Start                       
     elif stream=="commerce":
+        print('Now Please Enter Your Details')
+        Name=name_input()
+        marks = collect_and_analyze(Name, 8) 
         # Taking Input from Student of Interesting Subject
         interest=input('Enter Your Interested Subjects:').lower()
         valid_subject=['maths','accounts','business','economics','hindi','english','enterpreneur','legal study']
