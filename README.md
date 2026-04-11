@@ -26,3 +26,8 @@ This project analyzes student academic performance and provides career and strea
 ## 🚀 Outcome
 - Helped in understanding student strengths and weaknesses
 - Provided data-driven suggestions for future decisions
+## 📷 Output
+
+![Performance](performance_chart.png)
+![Analysis](subject_analysis.png)
+![Career](career_output.png)
